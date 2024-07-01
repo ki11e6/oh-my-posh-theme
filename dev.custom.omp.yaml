@@ -58,6 +58,17 @@ blocks:
         foreground: p:default_fg
         background: p:default_bg
         template: "{{ if .SSHSession }} {{ end }}{{ if .Root }}{{ if .UserName }}<#ff0055>{{ .UserName }}</>{{ end }}{{ else }}{{ .UserName }}{{ end }}{{ if .HostName }}{{ if .UserName }}@{{ end }}{{ .HostName }}{{ end }}"
+      - type: ipify
+        style: diamond
+        trailing_diamond: " "
+        leading_diamond: ""
+        background: p:default_bg
+        foreground: p:default_fg
+        properties:
+          cache_timeout: 5
+          http_timeout: 1000
+        template: "{{ if .IP }}{{ .IP }}{{ end
+          }}"
       - type: path
         style: diamond
         leading_diamond: ""
@@ -119,44 +130,9 @@ blocks:
             git2.wanadev.org: ""
         template: "{{ url .UpstreamIcon .UpstreamURL }}{{ if .UpstreamIcon }}{{ end }}{{ if .HEAD }} {{ .HEAD }}{{ end }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
   - type: prompt
-    alignment: left
-    newline: true
+    alignment: right
     overflow: break
     segments:
-      - type: time
-        style: diamond
-        leading_diamond: ""
-        trailing_diamond: ""
-        foreground: "#727272"
-        background: p:default_bg
-        properties:
-          style: mixed
-        template: "
-          {{ if .CurrentDate }}{{ .CurrentDate | date .Format }}{{ end
-          }}"
-      - type: sysinfo
-        style: diamond
-        leading_diamond: ""
-        trailing_diamond: " "
-        foreground: "#898c90"
-        background: p:default_bg
-        properties:
-          precision: 0
-        template: "{{ if .Load1 }} {{ round .Load1 0 }}%{{ end
-          }}{{ if .PhysicalPercentUsed }}{{ if .Load1 }} {{ end }} {{ round .PhysicalPercentUsed 0 }}%{{ end
-          }}{{ if .SwapPercentUsed }}{{ if or .Load1 .PhysicalPercentUsed }} {{ end }} {{ round .SwapPercentUsed 0 }}%{{ end
-          }}"
-      - type: ipify
-        style: diamond
-        trailing_diamond: " "
-        leading_diamond: ""
-        background: p:default_bg
-        foreground: p:default_fg
-        properties:
-          cache_timeout: 5
-          http_timeout: 1000
-        template: "{{ if .IP }}{{ .IP }}{{ end
-          }}"
       - type: terraform
         style: diamond
         leading_diamond: ""
@@ -421,6 +397,29 @@ blocks:
           threshold: 2000
         template: "
           {{ if .FormattedMs }} {{ .FormattedMs }}{{ end
+          }}"
+      - type: sysinfo
+        style: diamond
+        leading_diamond: ""
+        trailing_diamond: " "
+        foreground: "#898c90"
+        background: p:default_bg
+        properties:
+          precision: 0
+        template: "{{ if .Load1 }} {{ round .Load1 0 }}%{{ end
+          }}{{ if .PhysicalPercentUsed }}{{ if .Load1 }} {{ end }} {{ round .PhysicalPercentUsed 0 }}%{{ end
+          }}{{ if .SwapPercentUsed }}{{ if or .Load1 .PhysicalPercentUsed }} {{ end }} {{ round .SwapPercentUsed 0 }}%{{ end
+          }}"
+      - type: time
+        style: diamond
+        leading_diamond: ""
+        trailing_diamond: ""
+        foreground: "#727272"
+        background: p:default_bg
+        properties:
+          style: mixed
+        template: "
+          {{ if .CurrentDate }}{{ .CurrentDate | date .Format }}{{ end
           }}"
   - type: prompt
     alignment: left
