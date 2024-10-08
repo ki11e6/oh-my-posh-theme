@@ -1,0 +1,60 @@
+{
+    "terminal.integrated.fontFamily": "CaskaydiaCove NF",
+    "tabnine.experimentalAutoImports": true,
+    // "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Fira Code',CaskaydiaCove NF",
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+    "workbench.sideBar.location": "right",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontWeight": "normal",
+    "redhat.telemetry.enabled": false,
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.wordWrap": "on",
+    "workbench.startupEditor": "none",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.singleAttributePerLine": true,
+    "editor.linkedEditing": true,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "a-file-icon-vscode.filesAssociations": {},
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.preferredDarkColorTheme": "Tinacious Design",
+    "workbench.preferredLightColorTheme": "Tinacious Design (Light)",
+    "workbench.colorTheme": "Tinacious Design",
+    "codeium.enableCodeLens": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "git.openRepositoryInParentFolders": "never",
+    "codeium.enableConfig": {
+        "*": true,
+        "properties": true,
+        "http": true,
+        "bat": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "vsicons.dontShowNewVersionMessage": true
+    // "prettier.jsxSingleQuote":
+}

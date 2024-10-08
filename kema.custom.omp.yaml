@@ -57,17 +57,17 @@ blocks:
         foreground: p:default_fg
         background: p:default_bg
         template: "{{ if .SSHSession }} {{ end }}{{ if .Root }}{{ if .UserName }}<#ff0055>{{ .UserName }}</>{{ end }}{{ else }}{{ .UserName }}{{ end }}{{ if .HostName }}{{ if .UserName }}@{{ end }}{{ .HostName }}{{ end }}"
-      - type: ipify
-        style: diamond
-        trailing_diamond: " "
-        leading_diamond: ""
-        background: p:default_bg
-        foreground: p:default_fg
-        properties:
-          cache_timeout: 5
-          http_timeout: 1000
-        template: "{{ if .IP }}{{ .IP }}{{ end
-          }}"
+      # - type: ipify
+      #   style: diamond
+      #   trailing_diamond: " "
+      #   leading_diamond: ""
+      #   background: p:default_bg
+      #   foreground: p:default_fg
+      #   properties:
+      #     cache_timeout: 5
+      #     http_timeout: 1000
+      #   template: "{{ if .IP }}{{ .IP }}{{ end
+      #     }}"
       - type: path
         style: diamond
         leading_diamond: ""
